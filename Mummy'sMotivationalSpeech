@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int [][]arr=new int[n][n];
+
+        for(int row=0; row<n; row++){
+            for(int col=0; col<n; col++){
+                arr[row][col]=sc.nextInt();
+             }
+         }
+        System.out.println(Triangular_Matrix(arr,n));
+
+    }
+    public static boolean Triangular_Matrix(int [][]arr, int n){
+        int count=0;
+        for(int row=0; row<arr.length; row++){
+            for(int col=row+1; col<arr[0].length; col++){
+                if(arr[row][col]!=0){
+                    count++;
+                }
+                // else{
+                //     return false;
+                // }
+            }
+        }
+        if(count==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
